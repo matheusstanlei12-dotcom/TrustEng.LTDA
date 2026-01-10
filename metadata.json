@@ -1,0 +1,7 @@
+{
+  "name": "TrustEng Industrial Platform",
+  "description": "Plataforma tecnológica customizável para gestão de manutenção, análise de falhas e engenharia de confiabilidade de ativos industriais.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
