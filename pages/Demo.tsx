@@ -81,13 +81,7 @@ const Demo: React.FC = () => {
                 </div>
                 <div>
                   <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">Cargo Atual</label>
-                  <select name="role" className="w-full bg-slate-50 border border-slate-100 rounded-sm px-4 py-4 text-slate-900 font-medium focus:border-blue-700 focus:outline-none transition-colors appearance-none">
-                    <option>Gestor de Manutenção</option>
-                    <option>Engenheiro de Confiabilidade</option>
-                    <option>Gerente de Planta</option>
-                    <option>Diretor de Operações</option>
-                    <option>Consultor / Terceiro</option>
-                  </select>
+                  <input required name="role" type="text" className="w-full bg-slate-50 border border-slate-100 rounded-sm px-4 py-4 text-slate-900 font-medium focus:border-blue-700 focus:outline-none transition-colors" placeholder="Ex: Gestor de Manutenção" />
                 </div>
                 <div>
                   <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">Desafio Técnico Principal</label>
