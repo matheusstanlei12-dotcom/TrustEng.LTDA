@@ -18,6 +18,7 @@ const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: 'Home', path: '/' },
+    { name: 'Quem Somos', path: '/about' },
     { name: 'Arquitetura', path: '/platform' },
     { name: 'Funcionalidades', path: '/features' },
   ];
