@@ -9,8 +9,9 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
           <div className="space-y-8">
-            <Link to="/" className="text-blue-700 text-3xl font-black tracking-tighter block">
-              🔷 TrustEng
+            <Link to="/" className="flex items-center space-x-2 mb-8">
+              <img src="/favicon.png" alt="TrustEng Logo" className="h-10 w-10 object-contain" />
+              <span className="text-blue-700 text-3xl font-black tracking-tighter">TrustEng</span>
             </Link>
             <p className="text-slate-500 text-sm font-medium leading-relaxed">
               Tecnologia e inteligência aplicadas exclusivamente à manutenção industrial e engenharia de confiabilidade de ativos críticos.
