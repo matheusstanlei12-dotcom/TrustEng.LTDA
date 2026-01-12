@@ -17,8 +17,8 @@ const Footer: React.FC = () => {
               Tecnologia e inteligência aplicadas exclusivamente à manutenção industrial e engenharia de confiabilidade de ativos críticos.
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-slate-400 hover:text-blue-700 transition-colors"><Linkedin size={20} /></a>
-              <a href="#" className="text-slate-400 hover:text-blue-700 transition-colors"><Mail size={20} /></a>
+              <a href="https://www.linkedin.com/company/trusteng-industrial" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-blue-700 transition-colors"><Linkedin size={20} /></a>
+              <a href="mailto:trusteng@trusteng.online" className="text-slate-400 hover:text-blue-700 transition-colors"><Mail size={20} /></a>
             </div>
           </div>
 

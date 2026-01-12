@@ -10,6 +10,16 @@ const Demo: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const role = formData.get('role');
+    const challenge = formData.get('challenge');
+
+    const subject = `Solicitação de Demonstração - ${name}`;
+    const body = `Nome: ${name}%0D%0AE-mail: ${email}%0D%0ACargo: ${role}%0D%0ADesafio: ${challenge}`;
+
+    window.location.href = `mailto:trusteng@trusteng.online?subject=${subject}&body=${body}`;
     setSubmitted(true);
   };
 
@@ -22,7 +32,7 @@ const Demo: React.FC = () => {
             <p className="text-xl text-slate-500 mb-12 leading-relaxed font-medium">
               Nossos consultores técnicos apresentarão a plataforma focando nos indicadores de confiabilidade que mais impactam sua planta hoje.
             </p>
-            
+
             <div className="space-y-10">
               <div className="flex items-center space-x-5">
                 <div className="w-12 h-12 bg-blue-50 rounded-sm flex items-center justify-center border border-blue-100">
@@ -62,16 +72,16 @@ const Demo: React.FC = () => {
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
                     <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">Nome Completo</label>
-                    <input required type="text" className="w-full bg-slate-50 border border-slate-100 rounded-sm px-4 py-4 text-slate-900 font-medium focus:border-blue-700 focus:outline-none transition-colors" placeholder="João Silva" />
+                    <input required name="name" type="text" className="w-full bg-slate-50 border border-slate-100 rounded-sm px-4 py-4 text-slate-900 font-medium focus:border-blue-700 focus:outline-none transition-colors" placeholder="João Silva" />
                   </div>
                   <div>
                     <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">E-mail Corporativo</label>
-                    <input required type="email" className="w-full bg-slate-50 border border-slate-100 rounded-sm px-4 py-4 text-slate-900 font-medium focus:border-blue-700 focus:outline-none transition-colors" placeholder="joao@industria.com" />
+                    <input required name="email" type="email" className="w-full bg-slate-50 border border-slate-100 rounded-sm px-4 py-4 text-slate-900 font-medium focus:border-blue-700 focus:outline-none transition-colors" placeholder="joao@industria.com" />
                   </div>
                 </div>
                 <div>
                   <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">Cargo Atual</label>
-                  <select className="w-full bg-slate-50 border border-slate-100 rounded-sm px-4 py-4 text-slate-900 font-medium focus:border-blue-700 focus:outline-none transition-colors appearance-none">
+                  <select name="role" className="w-full bg-slate-50 border border-slate-100 rounded-sm px-4 py-4 text-slate-900 font-medium focus:border-blue-700 focus:outline-none transition-colors appearance-none">
                     <option>Gestor de Manutenção</option>
                     <option>Engenheiro de Confiabilidade</option>
                     <option>Gerente de Planta</option>
@@ -81,7 +91,7 @@ const Demo: React.FC = () => {
                 </div>
                 <div>
                   <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">Desafio Técnico Principal</label>
-                  <textarea className="w-full bg-slate-50 border border-slate-100 rounded-sm px-4 py-4 text-slate-900 font-medium focus:border-blue-700 focus:outline-none transition-colors h-32 resize-none" placeholder="Ex: Reduzir MTTR em britadores críticos..."></textarea>
+                  <textarea name="challenge" className="w-full bg-slate-50 border border-slate-100 rounded-sm px-4 py-4 text-slate-900 font-medium focus:border-blue-700 focus:outline-none transition-colors h-32 resize-none" placeholder="Ex: Reduzir MTTR em britadores críticos..."></textarea>
                 </div>
                 <button type="submit" className="w-full bg-blue-700 hover:bg-blue-800 text-white py-5 rounded-sm font-black text-sm uppercase tracking-widest transition-all shadow-xl shadow-blue-200">
                   Agendar Demonstração Técnica
