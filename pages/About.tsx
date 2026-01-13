@@ -11,7 +11,7 @@ const About: React.FC = () => {
         {
             role: "Diretor Financeiro e de Operações (CFO & COO)",
             name: "Thiago Luiz de Almeida Orlandi",
-            experience: "Engenheiro Mecânico, com 23 anos de experiência em manutenção industrial e operações, Thiago construiu sua carreira atuando na liderança de equipes técnicas, estruturação de processos, controle de custos, confiabilidade de ativos e eficiência operacional.",
+            experience: "Engenheiro Mecânico, com 23 anos de experiência em manutenção industrial e operações, Thiago construiu sua carreira atuando a gerência de equipes técnicas, estruturação de processos, controle de custos, confiabilidade de ativos e eficiência operacional.",
             focus: "Na TrustEng, lidera as áreas financeira e operacional, garantindo governança, previsibilidade e excelência na execução, assegurando que cada projeto gere impacto técnico e financeiro positivo para os clientes."
         },
         {
