@@ -62,25 +62,6 @@ const About: React.FC = () => {
                     </div>
                 </div>
             </section>
-
-            {/* Trust Quote / Stats bar */}
-            <section className="py-20 bg-slate-50 border-y border-slate-100">
-                <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-                        {[
-                            { label: "Precisão", val: "100%" },
-                            { label: "Segurança", val: "Militar" },
-                            { label: "Foco", val: "Industrial" },
-                            { label: "Atuação", val: "End-to-End" }
-                        ].map((stat, i) => (
-                            <div key={i} className="text-center">
-                                <div className="text-blue-700 font-black text-2xl tracking-tighter mb-1 uppercase italic">{stat.val}</div>
-                                <div className="text-slate-400 font-black text-[9px] uppercase tracking-[0.3em]">{stat.label}</div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
         </div>
     );
 };
