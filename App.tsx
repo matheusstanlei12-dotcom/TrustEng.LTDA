@@ -9,6 +9,7 @@ const Home = lazy(() => import('./pages/Home'));
 const Platform = lazy(() => import('./pages/Platform'));
 const Demo = lazy(() => import('./pages/Demo'));
 const About = lazy(() => import('./pages/About'));
+const History = lazy(() => import('./pages/History'));
 const FeaturesPage = lazy(() => import('./pages/FeaturesPage'));
 
 const LoadingFallback = () => (
@@ -29,6 +30,7 @@ const App: React.FC = () => {
               <Route path="/platform" element={<Platform />} />
               <Route path="/features" element={<FeaturesPage />} />
               <Route path="/about" element={<About />} />
+              <Route path="/history" element={<History />} />
               <Route path="/demo" element={<Demo />} />
             </Routes>
           </Suspense>

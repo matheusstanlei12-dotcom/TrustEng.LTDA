@@ -57,6 +57,7 @@ const Footer: React.FC = () => {
             <h4 className="text-slate-900 font-black mb-8 text-[10px] uppercase tracking-[0.4em]">Plataforma</h4>
             <ul className="space-y-4 text-xs text-slate-500 font-bold uppercase tracking-widest">
               <li><Link to="/about" className="hover:text-blue-700 transition-colors">Quem Somos</Link></li>
+              <li><Link to="/history" className="hover:text-blue-700 transition-colors">Nossa História</Link></li>
               <li><Link to="/features" className="hover:text-blue-700 transition-colors">Funcionalidades</Link></li>
               <li><Link to="/platform" className="hover:text-blue-700 transition-colors">Arquitetura</Link></li>
               <li><Link to="/demo" className="hover:text-blue-700 transition-colors">Suporte Técnico</Link></li>
