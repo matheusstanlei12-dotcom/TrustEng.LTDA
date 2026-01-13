@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, Mail, ShieldCheck, ArrowUpRight } from 'lucide-react';
+import { Linkedin, Mail, ShieldCheck, ArrowUpRight, Instagram } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -18,6 +18,7 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex space-x-6">
               <a href="https://www.linkedin.com/company/trusteng-industrial" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-blue-700 transition-colors"><Linkedin size={20} /></a>
+              <a href="https://www.instagram.com/trusteng.online/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-blue-700 transition-colors"><Instagram size={20} /></a>
               <a href="mailto:trusteng@trusteng.online" className="text-slate-400 hover:text-blue-700 transition-colors"><Mail size={20} /></a>
             </div>
           </div>
