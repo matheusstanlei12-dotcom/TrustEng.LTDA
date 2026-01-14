@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
           <div className="space-y-8">
             <Link to="/" className="flex items-center space-x-2 mb-8">
               <img src="/favicon.png" alt="TrustEng Logo" className="h-10 w-10 object-contain" />
-              <span className="text-blue-700 text-3xl font-black tracking-tighter">TrustEng</span>
+              <span className="text-blue-700 text-3xl font-black tracking-tighter">Trust Tecnologia</span>
             </Link>
             <p className="text-slate-500 text-sm font-medium leading-relaxed">
               Tecnologia e inteligência aplicadas exclusivamente à manutenção industrial e engenharia de confiabilidade de ativos críticos.
@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="pt-12 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center text-[9px] text-slate-400 font-black uppercase tracking-[0.3em]">
-          <p>TrustEng – Tecnologia Aplicada à Manutenção. © Todos os direitos reservados.</p>
+          <p>Trust Tecnologia – Tecnologia Aplicada à Manutenção. © Todos os direitos reservados.</p>
           <div className="flex items-center space-x-6 mt-6 md:mt-0">
             <div className="flex items-center space-x-2">
               <ShieldCheck size={14} className="text-blue-600" />

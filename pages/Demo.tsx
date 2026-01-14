@@ -36,7 +36,7 @@ const Demo: React.FC = () => {
               Eleve o nível da sua <span className="text-blue-700 italic">Gestão</span>.
             </h1>
             <p className="text-xl text-slate-500 mb-12 leading-relaxed font-medium max-w-xl">
-              Agende uma imersão técnica exclusiva. Nossos especialistas mapearão seus gargalos operacionais e demonstrarão como a TrustEng entrega previsibilidade real.
+              Agende uma imersão técnica exclusiva. Nossos especialistas mapearão seus gargalos operacionais e demonstrarão como a Trust Tecnologia entrega previsibilidade real.
             </p>
 
             <div className="space-y-8">
@@ -126,7 +126,7 @@ const Demo: React.FC = () => {
                         placeholder="DESCREVA O PROBLEMA QUE PRECISA SER RESOLVIDO..."
                       ></textarea>
                       <div className="absolute bottom-4 right-4 text-[9px] font-black text-slate-300 uppercase tracking-widest">
-                        Manutenção Industrial • TrustEng
+                        Manutenção Industrial • Trust Tecnologia
                       </div>
                     </div>
                   </div>

@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-3">
             <img src="/favicon.png" alt="TrustEng Logo" className="h-10 w-10 object-contain" />
-            <span className="text-blue-700 text-3xl font-extrabold tracking-tighter">TrustEng</span>
+            <span className="text-blue-700 text-3xl font-extrabold tracking-tighter">Trust Tecnologia</span>
           </Link>
 
           {/* Desktop Nav */}

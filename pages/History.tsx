@@ -11,7 +11,7 @@ const HistoryPage: React.FC = () => {
         {
             year: "Origem",
             title: "Vivência em Campo",
-            desc: "A TrustEng nasceu da experiência prática de profissionais que viveram os desafios reais da manutenção industrial: falhas recorrentes, informações fragmentadas e baixa confiabilidade de dados."
+            desc: "A Trust Tecnologia nasceu da experiência prática de profissionais que viveram os desafios reais da manutenção industrial: falhas recorrentes, informações fragmentadas e baixa confiabilidade de dados."
         },
         {
             year: "O Problema",
@@ -21,7 +21,7 @@ const HistoryPage: React.FC = () => {
         {
             year: "Fundação",
             title: "Inversão da Lógica",
-            desc: "A TrustEng foi criada para unir engenharia de manutenção e tecnologia aplicada, onde os sistemas se moldam aos processos reais, e não aos modelos genéricos de mercado."
+            desc: "A Trust Tecnologia foi criada para unir engenharia de manutenção e tecnologia aplicada, onde os sistemas se moldam aos processos reais, e não aos modelos genéricos de mercado."
         }
     ];
 
@@ -52,7 +52,7 @@ const HistoryPage: React.FC = () => {
                                         Ao longo de décadas atuando diretamente em planejamento, execução, supervisão e gestão da manutenção, nossos diretores identificaram um problema comum: a falta de aderência técnica das ferramentas tradicionais.
                                     </p>
                                     <p className="text-lg text-slate-500 font-medium leading-relaxed">
-                                        A partir dessa visão, a TrustEng passou a desenvolver plataformas próprias de gestão, análise de ocorrências e controle operacional, construídas a partir de dados reais, fluxos operacionais e indicadores utilizados no dia a dia das indústrias.
+                                        A partir dessa visão, a Trust Tecnologia passou a desenvolver plataformas próprias de gestão, análise de ocorrências e controle operacional, construídas a partir de dados reais, fluxos operacionais e indicadores utilizados no dia a dia das indústrias.
                                     </p>
                                 </div>
                             </div>
@@ -89,7 +89,7 @@ const HistoryPage: React.FC = () => {
                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
                     <div className="text-center mb-20">
                         <h2 className="text-4xl font-black text-slate-900 uppercase tracking-tighter mb-4">Três Pilares Fundamentais</h2>
-                        <p className="text-slate-500 font-bold uppercase text-[10px] tracking-[0.3em]">Consolidação da abordagem TrustEng</p>
+                        <p className="text-slate-500 font-bold uppercase text-[10px] tracking-[0.3em]">Consolidação da abordagem Trust Tecnologia</p>
                     </div>
                     <div className="grid md:grid-cols-3 gap-8">
                         {[
@@ -113,11 +113,11 @@ const HistoryPage: React.FC = () => {
             <section className="py-32">
                 <div className="max-w-4xl mx-auto px-6 text-center">
                     <p className="text-xl lg:text-3xl text-slate-900 font-bold leading-relaxed mb-12">
-                        Hoje, a TrustEng atua como uma parceira estratégica de empresas que exigem controle, previsibilidade e excelência operacional.
+                        Hoje, a Trust Tecnologia atua como uma parceira estratégica de empresas que exigem controle, previsibilidade e excelência operacional.
                     </p>
                     <div className="h-2 w-24 bg-blue-700 mx-auto mb-12"></div>
                     <h3 className="text-2xl lg:text-4xl font-black text-slate-900 uppercase tracking-tighter italic">
-                        "A TrustEng existe para garantir que a manutenção industrial deixe de ser reativa e passe a ser estratégica, previsível e controlada."
+                        "A Trust Tecnologia existe para garantir que a manutenção industrial deixe de ser reativa e passe a ser estratégica, previsível e controlada."
                     </h3>
                 </div>
             </section>

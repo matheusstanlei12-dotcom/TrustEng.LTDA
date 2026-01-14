@@ -24,7 +24,7 @@ const ProcessFlow: React.FC = () => {
         <div className="relative">
           {/* Connector Line (Desktop) */}
           <div className="absolute top-1/2 left-0 w-full h-px bg-slate-200 hidden lg:block -translate-y-1/2"></div>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 relative z-10">
             {steps.map((step, idx) => (
               <div key={step.id} className="text-center bg-white border border-slate-200 p-8 rounded-sm shadow-sm hover:border-blue-600 transition-all group">
@@ -42,7 +42,7 @@ const ProcessFlow: React.FC = () => {
 
         <div className="mt-20 max-w-4xl mx-auto text-center">
           <p className="text-slate-500 text-sm font-bold uppercase tracking-widest leading-relaxed">
-            A TrustEng estrutura análises de falhas com metodologias reconhecidas pela engenharia, garantindo identificação clara do problema e eliminação definitiva de recorrências.
+            A Trust Tecnologia estrutura análises de falhas com metodologias reconhecidas pela engenharia, garantindo identificação clara do problema e eliminação definitiva de recorrências.
           </p>
         </div>
       </div>

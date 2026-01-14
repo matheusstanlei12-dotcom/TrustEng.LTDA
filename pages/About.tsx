@@ -12,19 +12,19 @@ const About: React.FC = () => {
             role: "Diretor Financeiro e de Operações (CFO & COO)",
             name: "Thiago Luiz de Almeida Orlandi",
             experience: "Engenheiro Mecânico, com 23 anos de experiência em manutenção industrial e operações, Thiago construiu sua carreira atuando a gerência de equipes técnicas, estruturação de processos, controle de custos, confiabilidade de ativos e eficiência operacional.",
-            focus: "Na TrustEng, lidera as áreas financeira e operacional, garantindo governança, previsibilidade e excelência na execução, assegurando que cada projeto gere impacto técnico e financeiro positivo para os clientes."
+            focus: "Na Trust Tecnologia, lidera as áreas financeira e operacional, garantindo governança, previsibilidade e excelência na execução, assegurando que cada projeto gere impacto técnico e financeiro positivo para os clientes."
         },
         {
             role: "Diretor de Tecnologia (CTO)",
             name: "Matheus Stanley Rodrigues Moura",
             experience: "Com 14 anos de experiência em planejamento de manutenção, supervisão de operações de manutenção e desenvolvimento de sistemas, Matheus construiu sua carreira atuando na gestão de equipes técnicas, organização de processos e transformação da rotina operacional em soluções digitais.",
-            focus: "Na TrustEng, lidera o desenvolvimento dos sistemas, a arquitetura das soluções e a automação dos processos de manutenção, garantindo que a tecnologia reflita fielmente os fluxos, indicadores e necessidades operacionais de cada cliente."
+            focus: "Na Trust Tecnologia, lidera o desenvolvimento dos sistemas, a arquitetura das soluções e a automação dos processos de manutenção, garantindo que a tecnologia reflita fielmente os fluxos, indicadores e necessidades operacionais de cada cliente."
         },
         {
             role: "Diretor Comercial (CRO)",
             name: "Fabiano de Oliveira Lima",
             experience: "Com 22 anos de experiência em manutenção industrial, Fabiano construiu sua carreira atuando na gestão de equipes técnicas, organização de processos operacionais, padronização de rotinas e relacionamento com áreas de engenharia, produção e gestão.",
-            focus: "Na TrustEng, é responsável pela estratégia comercial, desenvolvimento de mercado, parcerias e relacionamento com grandes clientes, assegurando que cada solução esteja alinhada às reais necessidades técnicas e operacionais das indústrias atendidas."
+            focus: "Na Trust Tecnologia, é responsável pela estratégia comercial, desenvolvimento de mercado, parcerias e relacionamento com grandes clientes, assegurando que cada solução esteja alinhada às reais necessidades técnicas e operacionais das indústrias atendidas."
         }
     ];
 
@@ -49,23 +49,23 @@ const About: React.FC = () => {
                     <div className="max-w-4xl mx-auto text-left">
                         <div className="prose prose-slate max-w-none">
                             <p className="text-2xl text-slate-900 font-bold leading-relaxed mb-10 tracking-tight border-b border-slate-100 pb-10">
-                                A TrustEng é uma empresa focada em análise de falhas e gestão da manutenção industrial, atuando em toda a cadeia de processos que envolve ativos, equipes, planejamento, execução e desempenho operacional.
+                                A Trust Tecnologia é uma empresa focada em análise de falhas e gestão da manutenção industrial, atuando em toda a cadeia de processos que envolve ativos, equipes, planejamento, execução e desempenho operacional.
                             </p>
                             <div className="space-y-10 text-slate-500 text-lg font-medium leading-relaxed">
                                 <p>
                                     Nossa atuação vai além do diagnóstico. Desenvolvemos sistemas e aplicativos próprios, voltados exclusivamente para manutenção, análise de ocorrências e controle dos processos operacionais, permitindo que as empresas transformem informações do dia a dia em dados estruturados, indicadores confiáveis e decisões estratégicas.
                                 </p>
                                 <p>
-                                    Cada solução da TrustEng é desenhada para refletir a forma como a empresa realmente opera. Nossos sistemas se adaptam aos fluxos, políticas, indicadores e práticas de cada cliente, garantindo aderência total à realidade da operação e evitando rupturas, retrabalho ou perda de controle.
+                                    Cada solução da Trust Tecnologia é desenhada para refletir a forma como a empresa realmente opera. Nossos sistemas se adaptam aos fluxos, políticas, indicadores e práticas de cada cliente, garantindo aderência total à realidade da operação e evitando rupturas, retrabalho ou perda de controle.
                                 </p>
                                 <p>
                                     A segurança, confidencialidade e integridade dos dados são pilares da nossa atuação. Todas as informações operacionais, técnicas e financeiras dos clientes são tratadas com rigor absoluto de sigilo, controle de acesso e governança, assegurando que dados críticos permaneçam protegidos e sob total domínio da empresa.
                                 </p>
                                 <p>
-                                    Ao integrar análise de falhas, planejamento, execução e gestão, a TrustEng permite que as organizações reduzam recorrências, aumentem a confiabilidade dos ativos, melhorem o controle de custos e elevem a previsibilidade operacional.
+                                    Ao integrar análise de falhas, planejamento, execução e gestão, a Trust Tecnologia permite que as organizações reduzam recorrências, aumentem a confiabilidade dos ativos, melhorem o controle de custos e elevem a previsibilidade operacional.
                                 </p>
                                 <p className="text-slate-900 font-black text-2xl uppercase tracking-tighter italic lg:pr-20 border-l-4 border-blue-700 pl-8 py-4 bg-slate-50">
-                                    "A TrustEng existe para apoiar empresas que exigem confiança, precisão e excelência operacional em ambientes onde falhas não são uma opção."
+                                    "A Trust Tecnologia existe para apoiar empresas que exigem confiança, precisão e excelência operacional em ambientes onde falhas não são uma opção."
                                 </p>
                             </div>
                         </div>
@@ -100,7 +100,7 @@ const About: React.FC = () => {
 
                         <div className="mt-20 border-t border-slate-800 pt-20">
                             <p className="text-slate-400 text-lg font-medium leading-relaxed max-w-4xl italic">
-                                A TrustEng é conduzida por diretores executivos que unem vivência prática em manutenção industrial, liderança de equipes técnicas, estruturação de processos e visão estratégica, garantindo que cada solução entregue seja tecnicamente consistente, financeiramente sustentável e operacionalmente eficaz.
+                                A Trust Tecnologia é conduzida por diretores executivos que unem vivência prática em manutenção industrial, liderança de equipes técnicas, estruturação de processos e visão estratégica, garantindo que cada solução entregue seja tecnicamente consistente, financeiramente sustentável e operacionalmente eficaz.
                             </p>
                         </div>
                     </div>
@@ -119,7 +119,7 @@ const About: React.FC = () => {
                                 </h2>
                                 <div className="space-y-6 text-slate-500 text-lg font-medium leading-relaxed">
                                     <p>
-                                        A TrustEng opera com uma estrutura de governança corporativa orientada à confiabilidade operacional, integridade de dados e responsabilidade executiva.
+                                        A Trust Tecnologia opera com uma estrutura de governança corporativa orientada à confiabilidade operacional, integridade de dados e responsabilidade executiva.
                                     </p>
                                     <p>
                                         Todos os projetos, sistemas e entregas seguem papéis executivos definidos, com responsabilidades técnicas, financeiras e operacionais claramente estabelecidas, garantindo controle, rastreabilidade e previsibilidade em cada contrato.
@@ -149,7 +149,7 @@ const About: React.FC = () => {
                                 </ul>
                                 <div className="mt-12 pt-10 border-t border-slate-200">
                                     <p className="text-slate-500 text-sm font-medium leading-relaxed italic">
-                                        A TrustEng assegura que os dados pertencem exclusivamente ao cliente, permanecendo sob seu total controle, em conformidade com boas práticas de governança, segurança da informação e ética corporativa.
+                                        A Trust Tecnologia assegura que os dados pertencem exclusivamente ao cliente, permanecendo sob seu total controle, em conformidade com boas práticas de governança, segurança da informação e ética corporativa.
                                     </p>
                                 </div>
                             </div>

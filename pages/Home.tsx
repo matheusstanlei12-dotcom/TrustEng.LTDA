@@ -3,11 +3,11 @@ import React, { useEffect } from 'react';
 import Hero from '../components/Hero';
 import ProcessFlow from '../components/ProcessFlow';
 import { Link } from 'react-router-dom';
-import { 
-  AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer, BarChart, Bar 
+import {
+  AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer, BarChart, Bar
 } from 'recharts';
-import { 
-  Settings, Workflow, ShieldCheck, BarChart4, FileCheck, Layers, 
+import {
+  Settings, Workflow, ShieldCheck, BarChart4, FileCheck, Layers,
   ArrowRight, Activity, Clock, Database, TrendingDown, Target
 } from 'lucide-react';
 
@@ -30,14 +30,14 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="aggressive-border p-10 lg:p-20 bg-slate-50 shadow-sm">
             <h2 className="text-3xl lg:text-5xl font-black text-slate-900 leading-tight mb-12 uppercase tracking-tighter">
-              A manutenção deixou de ser apenas corretiva. 
+              A manutenção deixou de ser apenas corretiva.
               <span className="block text-slate-400 mt-2">Empresas que tratam falhas como eventos isolados perdem competitividade.</span>
             </h2>
-            
+
             <div className="grid md:grid-cols-2 gap-16 items-start">
               <div className="space-y-8">
                 <p className="text-lg text-slate-600 font-medium leading-relaxed">
-                  A TrustEng existe para transformar manutenção em decisão estratégica. Somos uma empresa de tecnologia voltada exclusivamente à manutenção industrial, desenvolvendo sistemas que organizam, padronizam e transformam dados técnicos em decisões reais.
+                  A Trust Tecnologia existe para transformar manutenção em decisão estratégica. Somos uma empresa de tecnologia voltada exclusivamente à manutenção industrial, desenvolvendo sistemas que organizam, padronizam e transformam dados técnicos em decisões reais.
                 </p>
                 <div className="space-y-4">
                   {["Sem achismo.", "Sem improviso.", "Sem perda de histórico."].map((text, idx) => (
@@ -95,7 +95,7 @@ const Home: React.FC = () => {
 
           <div className="mt-20 text-center">
             <p className="text-2xl lg:text-4xl font-black text-slate-900 tracking-tighter italic">
-              "A TrustEng se adapta ao seu processo, não o contrário."
+              "A Trust Tecnologia se adapta ao seu processo, não o contrário."
             </p>
           </div>
         </div>
@@ -166,7 +166,7 @@ const Home: React.FC = () => {
               <h2 className="text-blue-400 text-[10px] font-black uppercase tracking-[0.4em] mb-6">Segurança & Governança</h2>
               <p className="text-4xl font-extrabold text-white mb-8 tracking-tighter uppercase">Segurança, Sigilo e Histórico Preservado</p>
               <p className="text-slate-400 text-lg leading-relaxed font-medium mb-12">
-                Segurança e sigilo são pilares da TrustEng. Todos os dados são armazenados em nuvem com redundância geográfica, garantindo integridade e impedindo a perda do histórico técnico industrial.
+                Segurança e sigilo são pilares da Trust Tecnologia. Todos os dados são armazenados em nuvem com redundância geográfica, garantindo integridade e impedindo a perda do histórico técnico industrial.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 {[
@@ -187,9 +187,9 @@ const Home: React.FC = () => {
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-blue-600/10 rounded-sm blur-3xl"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=800&h=600" 
-                alt="Infraestrutura Industrial Cloud" 
+              <img
+                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=800&h=600"
+                alt="Infraestrutura Industrial Cloud"
                 className="relative z-10 rounded-sm grayscale opacity-30 border border-white/5"
               />
             </div>
@@ -202,9 +202,9 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-blue-700 text-[10px] font-black uppercase tracking-[0.4em] mb-4">Diferencial Competitivo</h2>
-            <p className="text-3xl font-extrabold text-slate-900 uppercase tracking-tighter">Por que escolher a TrustEng?</p>
+            <p className="text-3xl font-extrabold text-slate-900 uppercase tracking-tighter">Por que escolher a Trust Tecnologia?</p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { title: "Foco Exclusivo em Manutenção", desc: "Não somos um ERP genérico. Respiramos engenharia industrial." },

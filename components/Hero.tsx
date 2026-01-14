@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
   return (
     <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-white overflow-hidden border-b border-slate-100">
       <div className="absolute top-0 right-0 -mr-24 -mt-24 w-[700px] h-[700px] bg-blue-50/50 rounded-full blur-[140px] opacity-40"></div>
-      
+
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-7 space-y-10">
@@ -15,13 +15,13 @@ const Hero: React.FC = () => {
               <ShieldCheck className="w-4 h-4 mr-2" />
               Confiabilidade de Ativos & Análise de Falhas
             </div>
-            
+
             <h1 className="text-5xl lg:text-7xl font-black text-slate-900 leading-[1.05] tracking-tighter">
               Engenharia, Tecnologia e Inteligência Aplicadas à <span className="text-blue-700">Manutenção</span>
             </h1>
-            
+
             <p className="text-xl text-slate-500 max-w-2xl leading-relaxed font-medium">
-              A TrustEng é uma empresa de tecnologia especializada em sistemas inteligentes para análise de falhas, confiabilidade de ativos e gestão completa da manutenção industrial.
+              A Trust Tecnologia é uma empresa de tecnologia especializada em sistemas inteligentes para análise de falhas, confiabilidade de ativos e gestão completa da manutenção industrial.
             </p>
 
             <div className="flex flex-wrap gap-5 pt-4">
@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
                   <Activity className="text-blue-700 w-5 h-5" />
                 </div>
               </div>
-              
+
               <div className="space-y-6">
                 {[
                   { label: "Disponibilidade Global", width: "w-[92%]", color: "bg-blue-600" },
