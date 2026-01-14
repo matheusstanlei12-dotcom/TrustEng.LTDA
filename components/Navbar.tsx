@@ -28,9 +28,9 @@ const Navbar: React.FC = () => {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-sm py-3 shadow-sm border-b border-slate-100' : 'bg-white py-5'}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center space-x-2">
-            <img src="/favicon.png" alt="TrustEng Logo" className="h-8 w-8 object-contain" />
-            <span className="text-blue-700 text-2xl font-extrabold tracking-tighter">TrustEng</span>
+          <Link to="/" className="flex items-center space-x-3">
+            <img src="/favicon.png" alt="TrustEng Logo" className="h-10 w-10 object-contain" />
+            <span className="text-blue-700 text-3xl font-extrabold tracking-tighter">TrustEng</span>
           </Link>
 
           {/* Desktop Nav */}
