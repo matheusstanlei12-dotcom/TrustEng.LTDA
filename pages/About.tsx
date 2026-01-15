@@ -10,19 +10,19 @@ const About: React.FC = () => {
     const directors = [
         {
             role: "Diretor Financeiro e de Operações (CFO & COO)",
-            name: "Thiago Luiz de Almeida Orlandi",
+            name: "Thiago Orlandi",
             experience: "Engenheiro Mecânico, com 23 anos de experiência em manutenção industrial e operações, Thiago construiu sua carreira atuando a gerência de equipes técnicas, estruturação de processos, controle de custos, confiabilidade de ativos e eficiência operacional.",
             focus: "Na Trust Tecnologia, lidera as áreas financeira e operacional, garantindo governança, previsibilidade e excelência na execução, assegurando que cada projeto gere impacto técnico e financeiro positivo para os clientes."
         },
         {
             role: "Diretor de Tecnologia (CTO)",
-            name: "Matheus Stanley Rodrigues Moura",
+            name: "Matheus Stanley",
             experience: "Com 14 anos de experiência em planejamento de manutenção, supervisão de operações de manutenção e desenvolvimento de sistemas, Matheus construiu sua carreira atuando na gestão de equipes técnicas, organização de processos e transformação da rotina operacional em soluções digitais.",
             focus: "Na Trust Tecnologia, lidera o desenvolvimento dos sistemas, a arquitetura das soluções e a automação dos processos de manutenção, garantindo que a tecnologia reflita fielmente os fluxos, indicadores e necessidades operacionais de cada cliente."
         },
         {
             role: "Diretor Comercial (CRO)",
-            name: "Fabiano de Oliveira Lima",
+            name: "Fabiano Lima",
             experience: "Com 22 anos de experiência em manutenção industrial, Fabiano construiu sua carreira atuando na gestão de equipes técnicas, organização de processos operacionais, padronização de rotinas e relacionamento com áreas de engenharia, produção e gestão.",
             focus: "Na Trust Tecnologia, é responsável pela estratégia comercial, desenvolvimento de mercado, parcerias e relacionamento com grandes clientes, assegurando que cada solução esteja alinhada às reais necessidades técnicas e operacionais das indústrias atendidas."
         }
