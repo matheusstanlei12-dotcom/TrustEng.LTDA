@@ -23,7 +23,7 @@ const About: React.FC = () => {
         {
             role: "Diretor Comercial (CRO)",
             name: "Fabiano Lima",
-            experience: "Com 22 anos de experiência em manutenção industrial, Fabiano construiu sua carreira atuando na gestão de equipes técnicas, organização de processos operacionais, padronização de rotinas e relacionamento com áreas de engenharia, produção e gestão.",
+            experience: "Engenheiro de Produção com 22 anos de experiência em manutenção industrial e equipamentos móveis, Fabiano construiu sua carreira atuando na gestão de equipes técnicas, organização de processos operacionais, padronização de rotinas e relacionamento com áreas de engenharia, produção e gestão.",
             focus: "Na Trust Tecnologia, é responsável pela estratégia comercial, desenvolvimento de mercado, parcerias e relacionamento com grandes clientes, assegurando que cada solução esteja alinhada às reais necessidades técnicas e operacionais das indústrias atendidas."
         }
     ];
