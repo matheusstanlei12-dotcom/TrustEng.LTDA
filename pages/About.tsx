@@ -17,7 +17,7 @@ const About: React.FC = () => {
         {
             role: "Diretor de Tecnologia (CTO)",
             name: "Matheus Stanley",
-            experience: "Com 14 anos de experiência em planejamento de manutenção, supervisão de operações de manutenção e desenvolvimento de sistemas, Matheus construiu sua carreira atuando na gestão de equipes técnicas, organização de processos e transformação da rotina operacional em soluções digitais.",
+            experience: "Com 10 anos de experiência em planejamento de manutenção, supervisão de operações de manutenção e desenvolvimento de sistemas, Matheus construiu sua carreira atuando na gestão de equipes técnicas, organização de processos e transformação da rotina operacional em soluções digitais.",
             focus: "Na Trust Tecnologia, lidera o desenvolvimento dos sistemas, a arquitetura das soluções e a automação dos processos de manutenção, garantindo que a tecnologia reflita fielmente os fluxos, indicadores e necessidades operacionais de cada cliente."
         },
         {
