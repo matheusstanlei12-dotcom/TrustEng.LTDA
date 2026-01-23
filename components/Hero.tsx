@@ -58,7 +58,7 @@ const Hero: React.FC = () => {
           className={`absolute inset-0 transition-opacity duration-[2000ms] ease-in-out ${index === currentScene ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
         >
           {/* Image Container - Positioned to Right with Shaped Divider */}
-          <div className="absolute right-0 top-0 h-full w-full lg:w-[65%] bg-slate-50 overflow-hidden">
+          <div className="absolute right-0 top-0 h-full w-full lg:w-[55%] bg-slate-50 overflow-hidden">
             {/* The Image */}
             <img
               src={scene.image}
@@ -85,7 +85,7 @@ const Hero: React.FC = () => {
 
       {/* Main Hero Content - Aligned Left */}
       <div className="relative z-30 max-w-7xl mx-auto px-6 lg:px-8 w-full flex-grow flex items-center pb-20">
-        <div className="max-w-3xl">
+        <div className="max-w-2xl lg:max-w-xl">
           {/* Tagline */}
           <div className="mb-6 inline-flex items-center px-4 py-1.5 rounded bg-white/80 border border-slate-200 backdrop-blur-md shadow-sm">
             <div className="w-2 h-2 bg-blue-600 rounded-full mr-2 animate-pulse"></div>
@@ -93,13 +93,13 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Headline */}
-          <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black text-slate-900 tracking-tight leading-[0.95] mb-6 drop-shadow-sm">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-slate-900 tracking-tight leading-[0.95] mb-6 drop-shadow-sm">
             TRUST <br />
             <span className="text-slate-400">TECNOLOGIA</span>
           </h1>
 
           {/* Subtitle */}
-          <h2 className="text-lg lg:text-2xl text-slate-600 font-normal tracking-wide max-w-2xl border-l-4 border-blue-600 pl-6 mb-10 leading-relaxed">
+          <h2 className="text-lg lg:text-xl text-slate-600 font-normal tracking-wide max-w-lg border-l-4 border-blue-600 pl-6 mb-10 leading-relaxed">
             {SCENES[currentScene].text}
           </h2>
 
