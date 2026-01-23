@@ -57,17 +57,26 @@ const Hero: React.FC = () => {
           key={index}
           className={`absolute inset-0 transition-opacity duration-[2000ms] ease-in-out ${index === currentScene ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
         >
-          {/* Image Container - Full Coverage */}
-          <div className="absolute inset-0 bg-slate-900">
+          {/* Image Container - Positioned to Right with Shaped Divider */}
+          <div className="absolute right-0 top-0 h-full w-full lg:w-[65%] bg-slate-50 overflow-hidden">
+            {/* The Image */}
             <img
               src={scene.image}
               alt="Peritagem e Manutenção Hidráulica"
-              className="w-full h-full object-cover opacity-60 lg:opacity-100" // Opacity adjustment for mobile
+              className="w-full h-full object-cover object-center"
             />
-          </div>
 
-          {/* Gradient Overlay for Text Readability - Strong White on Left, Fading to Transparent */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent pointer-events-none"></div>
+            {/* The Separation Curve (Left Side of Image) */}
+            <div className="absolute top-0 left-0 h-full w-full pointer-events-none">
+              {/* This SVG creates the white curve sticking INTO the image from the left */}
+              <svg className="h-full w-auto text-white fill-current absolute left-0 top-0 transform scale-x-150 lg:scale-x-100 origin-left" viewBox="0 0 100 900" preserveAspectRatio="none">
+                <path d="M0 0 H100 V900 H0 Z" className="fill-white opacity-0 lg:opacity-0" /> {/* Fallback */}
+                <path d="M0,0V900C50,500,0,300,100,0Z" className="fill-white" />
+              </svg>
+              {/* Gradient to smooth the edge further */}
+              <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-white via-white/60 to-transparent"></div>
+            </div>
+          </div>
         </div>
       ))}
 
