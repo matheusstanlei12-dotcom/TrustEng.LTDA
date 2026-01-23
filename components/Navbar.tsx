@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md py-3 shadow-lg border-b border-slate-200' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 bg-white backdrop-blur-md border-b border-slate-100 ${scrolled ? 'py-3 shadow-md' : 'py-5 shadow-sm'}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-3 group">
@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-bold tracking-wide transition-colors hover:text-blue-800 ${location.pathname === link.path ? 'text-blue-800' : 'text-slate-800'}`}
+                className={`text-sm font-extrabold tracking-wide transition-colors hover:text-blue-700 ${location.pathname === link.path ? 'text-blue-700' : 'text-slate-900'}`}
               >
                 {link.name.toUpperCase()}
               </Link>
