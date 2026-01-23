@@ -1,19 +1,22 @@
-
 import React, { useEffect } from 'react';
 import Hero from '../components/Hero';
 import ProcessFlow from '../components/ProcessFlow';
 import { Link } from 'react-router-dom';
 import {
-  AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer, BarChart, Bar
+  AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer, BarChart, Bar, Tooltip
 } from 'recharts';
 import {
   Settings, Workflow, ShieldCheck, BarChart4, FileCheck, Layers,
-  ArrowRight, Activity, Clock, Database, TrendingDown, Target
+  ArrowRight, Activity, Clock, Database, TrendingDown, Target, CheckCircle2, Zap, Layout, Lock
 } from 'lucide-react';
 
 const mockChartData = [
-  { name: 'S1', val: 40 }, { name: 'S2', val: 30 }, { name: 'S3', val: 60 },
-  { name: 'S4', val: 50 }, { name: 'S5', val: 80 }, { name: 'S6', val: 70 },
+  { name: 'Jan', val: 4000, trend: 2400 },
+  { name: 'Feb', val: 3000, trend: 1398 },
+  { name: 'Mar', val: 2000, trend: 9800 },
+  { name: 'Apr', val: 2780, trend: 3908 },
+  { name: 'May', val: 1890, trend: 4800 },
+  { name: 'Jun', val: 2390, trend: 3800 },
 ];
 
 const Home: React.FC = () => {
@@ -22,220 +25,242 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-white">
+    <div className="bg-white min-h-screen text-slate-600 font-sans selection:bg-blue-100 selection:text-blue-900">
       <Hero />
 
-      {/* Agressive Technical Text Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="aggressive-border p-10 lg:p-20 bg-slate-50 shadow-sm">
-            <h2 className="text-3xl lg:text-5xl font-black text-slate-900 leading-tight mb-12 uppercase tracking-tighter">
-              A manutenção deixou de ser apenas corretiva.
-              <span className="block text-slate-400 mt-2">Empresas que tratam falhas como eventos isolados perdem competitividade.</span>
-            </h2>
+      {/* Value Proposition Section */}
+      <section className="py-24 relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-full opacity-30 pointer-events-none">
+          <div className="absolute top-[20%] left-[10%] w-72 h-72 bg-blue-500/10 rounded-full blur-[100px]"></div>
+          <div className="absolute bottom-[20%] right-[10%] w-96 h-96 bg-cyan-500/10 rounded-full blur-[100px]"></div>
+        </div>
 
-            <div className="grid md:grid-cols-2 gap-16 items-start">
-              <div className="space-y-8">
-                <p className="text-lg text-slate-600 font-medium leading-relaxed">
-                  A Trust Tecnologia existe para transformar manutenção em decisão estratégica. Somos uma empresa de tecnologia voltada exclusivamente à manutenção industrial, desenvolvendo sistemas que organizam, padronizam e transformam dados técnicos em decisões reais.
-                </p>
-                <div className="space-y-4">
-                  {["Sem achismo.", "Sem improviso.", "Sem perda de histórico."].map((text, idx) => (
-                    <div key={idx} className="flex items-center space-x-3 text-slate-900 font-black uppercase text-sm tracking-widest">
-                      <ShieldCheck className="text-blue-700 w-5 h-5" />
-                      <span>{text}</span>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 leading-tight">
+                A Manutenção do Futuro <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">Não é Sobre Consertar.</span>
+              </h2>
+              <p className="text-lg text-slate-500 leading-relaxed">
+                Empresas líderes não esperam o equipamento quebrar. A Trust Tecnologia oferece a infraestrutura digital para que você antecipe falhas, otimize recursos e transforme seu departamento de manutenção em um centro de lucro.
+              </p>
+
+              <div className="space-y-6">
+                {[
+                  { title: "Zero Data Loss", desc: "Histórico blindado e acessível para sempre." },
+                  { title: "Decisões Data-Driven", desc: "Chega de 'eu acho'. Tenha certeza baseada em dados." },
+                  { title: "Compliance Total", desc: "Processos auditáveis ponta a ponta." }
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-start space-x-4">
+                    <div className="mt-1 bg-blue-50 p-2 rounded-lg border border-blue-100">
+                      <ShieldCheck className="text-blue-600 w-5 h-5" />
                     </div>
-                  ))}
-                </div>
+                    <div>
+                      <h4 className="text-slate-900 font-bold text-sm tracking-wide">{item.title}</h4>
+                      <p className="text-slate-500 text-sm mt-1">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <div className="bg-white p-8 border border-slate-200">
-                <h4 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-8">Conceito de Asset Integrity</h4>
-                <div className="h-40 w-full opacity-40">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <AreaChart data={mockChartData}>
-                      <Area type="monotone" dataKey="val" stroke="#1d4ed8" fill="#1d4ed8" fillOpacity={0.1} strokeWidth={3} />
-                    </AreaChart>
-                  </ResponsiveContainer>
+            </div>
+
+            <div className="bg-white/50 backdrop-blur-md border border-slate-200 rounded-2xl p-8 relative shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-b from-blue-50/50 to-transparent rounded-2xl pointer-events-none"></div>
+              <h4 className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-6">Tendência de Confiabilidade</h4>
+
+              <div className="h-64 w-full">
+                <ResponsiveContainer width="100%" height="100%">
+                  <AreaChart data={mockChartData}>
+                    <defs>
+                      <linearGradient id="colorVal" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.3} />
+                        <stop offset="95%" stopColor="#3b82f6" stopOpacity={0} />
+                      </linearGradient>
+                    </defs>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" vertical={false} />
+                    <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#64748b', fontSize: 12 }} />
+                    <YAxis axisLine={false} tickLine={false} tick={{ fill: '#64748b', fontSize: 12 }} />
+                    <Tooltip
+                      contentStyle={{ backgroundColor: '#ffffff', borderColor: '#e2e8f0', color: '#0f172a', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
+                      itemStyle={{ color: '#2563eb' }}
+                    />
+                    <Area type="monotone" dataKey="val" stroke="#2563eb" fillOpacity={1} fill="url(#colorVal)" strokeWidth={3} />
+                    <Area type="monotone" dataKey="trend" stroke="#06b6d4" strokeWidth={2} fill="none" strokeDasharray="5 5" />
+                  </AreaChart>
+                </ResponsiveContainer>
+              </div>
+
+              <div className="mt-6 flex justify-between items-end">
+                <div>
+                  <div className="text-3xl font-bold text-slate-900">+24%</div>
+                  <div className="text-xs text-blue-600 font-medium flex items-center mt-1">
+                    <TrendingDown className="w-3 h-3 mr-1 rotate-180" /> Aumento de MTBF
+                  </div>
                 </div>
-                <p className="text-[10px] text-slate-400 mt-6 text-center font-bold uppercase tracking-tighter">
-                  Representação visual de estabilidade técnica
-                </p>
+                <div className="text-right">
+                  <div className="text-xs text-slate-500 font-medium">Projeção estimada</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Customizable Platform Section */}
-      <section className="py-24 bg-white">
+      {/* Platform Features Section */}
+      <section className="py-24 bg-slate-50 border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-blue-700 text-[10px] font-black uppercase tracking-[0.4em] mb-4">Arquitetura de Gestão</h2>
-            <p className="text-3xl font-extrabold text-slate-900 uppercase tracking-tighter">Plataforma Totalmente Customizável</p>
-            <div className="h-1 w-12 bg-blue-700 mx-auto mt-6"></div>
+          <div className="text-center mb-16">
+            <span className="text-blue-600 font-bold tracking-widest text-xs uppercase bg-blue-50 px-3 py-1 rounded-full border border-blue-100">Ecossistema Completo</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-6 mb-4">Plataforma Modular e Escalável</h2>
+            <p className="text-slate-500 max-w-2xl mx-auto">
+              Construa sua gestão de manutenção bloco a bloco. Ative apenas o que precisa e expanda conforme sua maturidade técnica.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Sistema Moldado à Realidade", desc: "Configuração profunda baseada nos ativos específicos da sua planta.", icon: <Settings /> },
-              { title: "Fluxos Configuráveis", desc: "Desenho de workflows de manutenção adequados aos seus processos.", icon: <Workflow /> },
-              { title: "Indicadores Personalizados", desc: "KPIs definidos pela engenharia conforme metas organizacionais.", icon: <BarChart4 /> },
-              { title: "Níveis de Acesso por Função", desc: "Segurança granular baseada em cargos e responsabilidades técnicas.", icon: <ShieldCheck /> },
-              { title: "Processos Auditáveis", desc: "Toda ação é registrada com log completo para auditorias externas.", icon: <FileCheck /> },
-              { title: "Estrutura Escalável", desc: "Arquitetura pronta para acompanhar o crescimento da sua indústria.", icon: <Layers /> }
+              { title: "Engenharia de Ativos", desc: "Cadastro hierárquico (ISO 14224) e gestão de ciclo de vida.", icon: <Database /> },
+              { title: "Workflows Inteligentes", desc: "Automatize fluxos de aprovação e ordens de serviço.", icon: <Workflow /> },
+              { title: "Analytics Integrado", desc: "Dashboards em tempo real para gerentes e diretores.", icon: <BarChart4 /> },
+              { title: "Controle de Acesso", desc: "Segurança granular por nível hierárquico.", icon: <ShieldCheck /> },
+              { title: "Auditoria Completa", desc: "Rastreabilidade de 100% das ações no sistema.", icon: <FileCheck /> },
+              { title: "Integração API", desc: "Conecte com SAP, Totvs e outros ERPs via REST.", icon: <Layers /> }
             ].map((card, i) => (
-              <div key={i} className="p-10 border border-slate-100 bg-white hover:border-blue-700 hover:shadow-xl transition-all group">
-                {/* Added cast to React.ReactElement<any> to allow 'size' prop */}
-                <div className="text-blue-700 mb-8 transition-transform group-hover:scale-110">{React.cloneElement(card.icon as React.ReactElement<any>, { size: 32 })}</div>
-                <h3 className="text-sm font-black text-slate-900 uppercase tracking-widest mb-4 leading-tight">{card.title}</h3>
-                <p className="text-xs text-slate-500 font-medium leading-relaxed">{card.desc}</p>
+              <div key={i} className="group p-8 rounded-xl bg-white border border-slate-200 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300">
+                <div className="w-12 h-12 rounded-lg bg-slate-50 group-hover:bg-blue-600 group-hover:text-white flex items-center justify-center text-blue-600 transition-colors mb-6">
+                  {React.cloneElement(card.icon as React.ReactElement<any>, { size: 24 })}
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">{card.title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed">{card.desc}</p>
               </div>
             ))}
-          </div>
-
-          <div className="mt-20 text-center">
-            <p className="text-2xl lg:text-4xl font-black text-slate-900 tracking-tighter italic">
-              "A Trust Tecnologia se adapta ao seu processo, não o contrário."
-            </p>
           </div>
         </div>
       </section>
 
       <ProcessFlow />
 
-      {/* Interactive Indicators Section */}
-      <section className="py-24 bg-white border-b border-slate-100">
+      {/* Metrics Grid */}
+      <section className="py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-blue-700 text-[10px] font-black uppercase tracking-[0.4em] mb-4">Métricas de Confiabilidade</h2>
-            <p className="text-3xl font-extrabold text-slate-900 uppercase tracking-tighter">Indicadores Técnicos Integrados</p>
-            <p className="text-slate-400 text-[10px] font-bold uppercase mt-4 italic tracking-widest">Passe o mouse sobre as siglas para definições técnicas</p>
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div>
+              <h2 className="text-3xl font-bold text-slate-900">Dominando a Falha</h2>
+              <p className="text-slate-500 mt-2 max-w-xl">
+                Indicadores que transformam técnicos em gestores. Entenda o que cada sigla significa para o seu resultado.
+              </p>
+            </div>
+            <Link to="/demo" className="text-blue-600 font-bold text-sm flex items-center hover:text-blue-500 transition-colors">
+              Ver todos os indicadores <ArrowRight className="ml-2 w-4 h-4" />
+            </Link>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
             {[
-              { label: "MTTR", icon: <Clock />, tooltip: "Mean Time To Repair: Tempo médio necessário para reparar um equipamento após falha." },
-              { label: "MTBF", icon: <Activity />, tooltip: "Mean Time Between Failures: Tempo médio entre ocorrências de falhas em um ativo reparável." },
-              { label: "MDT", icon: <TrendingDown />, tooltip: "Mean Down Time: Tempo médio de indisponibilidade total de um sistema ou ativo." },
-              { label: "Disponibilidade", icon: <Database />, tooltip: "Availability: Relação entre o tempo que o equipamento esteve disponível para operação e o tempo total." },
-              { label: "Confiabilidade", icon: <ShieldCheck />, tooltip: "Reliability: Probabilidade de um item desempenhar sua função sob condições específicas em um intervalo de tempo." },
-              { label: "Horas de Parada", icon: <Clock />, tooltip: "Duração acumulada de tempo em que os ativos estiveram fora de operação por falhas ou intervenções." },
-              { label: "Custos", icon: <Target />, tooltip: "Economic Impact: Impacto financeiro direto e indireto causado pela indisponibilidade de ativos críticos." }
+              { label: "MTTR", icon: <Clock />, tooltip: "Tempo Médio para Reparo: Eficiência da equipe de intervenção." },
+              { label: "MTBF", icon: <Activity />, tooltip: "Tempo Médio Entre Falhas: Indicador vital de confiabilidade." },
+              { label: "OEE", icon: <Zap />, tooltip: "Eficiência Global do Equipamento: Disponibilidade x Performance x Qualidade." },
+              { label: "Disponibilidade", icon: <Database />, tooltip: "% de tempo que o ativo está pronto para operar." },
+              { label: "Confiabilidade", icon: <ShieldCheck />, tooltip: "Probabilidade de sucesso de operação em um período." },
+              { label: "Backlog", icon: <Layout />, tooltip: "Carteira de serviços pendentes vs. capacidade de execução." },
+              { label: "Custo Falha", icon: <Target />, tooltip: "Custo total (material + mão de obra + lucro cessante)." }
             ].map((item, i) => (
-              <div key={i} className="indicator-card p-6 bg-slate-50 border border-slate-100 text-center hover:bg-blue-700 hover:text-white transition-all group">
-                <div className="flex justify-center mb-4 text-blue-700 group-hover:text-white transition-colors">
-                  {/* Added cast to React.ReactElement<any> to allow 'size' prop */}
-                  {React.cloneElement(item.icon as React.ReactElement<any>, { size: 24 })}
+              <div key={i} className="group relative p-4 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 hover:border-blue-200 transition-all cursor-help text-center">
+                <div className="flex justify-center mb-3 text-slate-400 group-hover:text-blue-600 transition-colors">
+                  {React.cloneElement(item.icon as React.ReactElement<any>, { size: 20 })}
                 </div>
-                <div className="text-[10px] font-black uppercase tracking-widest group-hover:text-white">{item.label}</div>
-                <div className="indicator-tooltip">
-                  <p className="font-bold text-blue-400 mb-1 uppercase tracking-widest">{item.label}</p>
-                  <p className="text-[10px] opacity-90 leading-relaxed font-medium">{item.tooltip}</p>
+                <div className="text-xs font-bold text-slate-600 uppercase tracking-wider">{item.label}</div>
+
+                {/* Modern Tooltip */}
+                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-48 p-3 bg-white text-left text-xs text-slate-600 rounded-lg border border-slate-200 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <div className="font-bold text-blue-600 mb-1">{item.label}</div>
+                  {item.tooltip}
+                  <div className="absolute bottom-[-6px] left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-b border-r border-slate-200 rotate-45"></div>
                 </div>
               </div>
             ))}
           </div>
-
-          {/* Conceptual Chart Grid */}
-          <div className="grid md:grid-cols-2 gap-8 mt-16 opacity-50">
-            <div className="h-48 border border-slate-100 p-6 bg-white">
-              <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data={mockChartData}>
-                  <Area type="step" dataKey="val" stroke="#1d4ed8" fill="#1d4ed8" fillOpacity={0.05} />
-                </AreaChart>
-              </ResponsiveContainer>
-              <div className="text-[9px] font-black uppercase text-center mt-2 text-slate-300">Análise de Tendência Confiabilidade</div>
-            </div>
-            <div className="h-48 border border-slate-100 p-6 bg-white">
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={mockChartData}>
-                  <Bar dataKey="val" fill="#1e293b" radius={[2, 2, 0, 0]} />
-                </BarChart>
-              </ResponsiveContainer>
-              <div className="text-[9px] font-black uppercase text-center mt-2 text-slate-300">Distribuição de Modos de Falha</div>
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* Security & History Section */}
-      <section className="py-24 bg-slate-900 text-white">
+      {/* Security Section */}
+      <section className="py-24 bg-gradient-to-br from-slate-50 to-[#f8fafc] border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
-              <h2 className="text-blue-400 text-[10px] font-black uppercase tracking-[0.4em] mb-6">Segurança & Governança</h2>
-              <p className="text-4xl font-extrabold text-white mb-8 tracking-tighter uppercase">Segurança, Sigilo e Histórico Preservado</p>
-              <p className="text-slate-400 text-lg leading-relaxed font-medium mb-12">
-                Segurança e sigilo são pilares da Trust Tecnologia. Todos os dados são armazenados em nuvem com redundância geográfica, garantindo integridade e impedindo a perda do histórico técnico industrial.
+              <div className="flex items-center gap-2 mb-6">
+                <ShieldCheck className="text-blue-600 w-5 h-5" />
+                <span className="text-blue-600 font-bold text-xs uppercase tracking-widest">Enterprise Security</span>
+              </div>
+              <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-6">Seus dados são o seu maior ativo.</h2>
+              <p className="text-slate-500 text-lg leading-relaxed mb-10">
+                Segurança de nível bancário para informações industriais críticas. Criptografia ponta a ponta, backups redundantes e servidores isolados.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+
+              <div className="grid sm:grid-cols-2 gap-y-6 gap-x-8">
                 {[
-                  { title: "Controle por Perfil", desc: "Níveis de acesso baseados em responsabilidade." },
-                  { title: "Rastreabilidade", desc: "Histórico completo de toda análise e decisão." },
-                  { title: "Pronto p/ Auditorias", desc: "Conformidade total com normas de segurança." },
-                  { title: "Backup Cloud", desc: "Integridade de dados garantida 24/7." }
+                  "Criptografia AES-256",
+                  "Backup Geo-Redundante",
+                  "Logs de Auditoria Imutáveis",
+                  "ISO 27001 Compliance",
+                  "Autenticação MFA",
+                  "SLA de 99.9%"
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-start space-x-3">
-                    <CheckCircle2 className="text-blue-400 w-5 h-5 shrink-0" />
-                    <div>
-                      <h4 className="text-xs font-black uppercase tracking-widest text-white mb-1">{item.title}</h4>
-                      <p className="text-[10px] text-slate-500 font-bold uppercase tracking-tight">{item.desc}</p>
-                    </div>
+                  <div key={idx} className="flex items-center space-x-3">
+                    <CheckCircle2 className="text-blue-600 w-4 h-4 shrink-0" />
+                    <span className="text-sm text-slate-600 font-medium">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
             <div className="relative">
-              <div className="absolute inset-0 bg-blue-600/10 rounded-sm blur-3xl"></div>
-              <img
-                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=800&h=600"
-                alt="Infraestrutura Industrial Cloud"
-                className="relative z-10 rounded-sm grayscale opacity-30 border border-white/5"
-              />
+              <div className="absolute inset-0 bg-blue-500/5 rounded-full blur-[100px]"></div>
+              <div className="relative z-10 bg-white border border-slate-200 p-8 rounded-2xl shadow-2xl">
+                <div className="flex items-center gap-4 mb-6 border-b border-slate-100 pb-4">
+                  <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center">
+                    <Lock className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <div>
+                    <div className="text-slate-900 font-bold text-sm">Status de Segurança</div>
+                    <div className="text-slate-500 text-xs text-blue-600">Monitoramento Ativo</div>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="bg-slate-50 p-4 rounded-lg border border-slate-200 flex justify-between items-center">
+                    <span className="text-slate-500 text-sm">Tentativas de invasão</span>
+                    <span className="text-slate-900 font-mono font-bold">0</span>
+                  </div>
+                  <div className="bg-slate-50 p-4 rounded-lg border border-slate-200 flex justify-between items-center">
+                    <span className="text-slate-500 text-sm">Last Backup</span>
+                    <span className="text-blue-600 font-mono text-xs">JUST NOW</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Competitive Differential */}
-      <section className="py-24 bg-white border-t border-slate-100">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-blue-700 text-[10px] font-black uppercase tracking-[0.4em] mb-4">Diferencial Competitivo</h2>
-            <p className="text-3xl font-extrabold text-slate-900 uppercase tracking-tighter">Por que escolher a Trust Tecnologia?</p>
-          </div>
+      {/* CTA Section */}
+      <section className="py-32 relative overflow-hidden bg-white">
+        <div className="absolute inset-0 bg-blue-50/50 pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-full h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent opacity-50"></div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { title: "Foco Exclusivo em Manutenção", desc: "Não somos um ERP genérico. Respiramos engenharia industrial." },
-              { title: "Plataforma Técnica Profissional", desc: "Interface desenvolvida por especialistas para especialistas." },
-              { title: "Adaptável à Maturidade", desc: "Nossa tecnologia cresce conforme sua evolução de processos." },
-              { title: "Interface Clara e Objetiva", desc: "Foco total na informação relevante para a decisão técnica." },
-              { title: "Base Sólida p/ Melhoria", desc: "Histórico preservado para aplicação real de PDCA e RCM." },
-              { title: "Visão Sistêmica de Ativos", desc: "Compreensão da planta como um organismo integrado e interdependente." }
-            ].map((item, i) => (
-              <div key={i} className="p-10 bg-slate-50 border border-slate-100 flex flex-col items-center text-center group hover:bg-white hover:shadow-2xl transition-all">
-                <div className="w-12 h-12 bg-blue-50 flex items-center justify-center rounded-sm mb-6 group-hover:bg-blue-700 group-hover:text-white transition-colors">
-                  <Activity size={24} className="text-blue-700 group-hover:text-white" />
-                </div>
-                <h4 className="text-xs font-black uppercase tracking-widest text-slate-900 mb-4">{item.title}</h4>
-                <p className="text-[10px] text-slate-500 font-bold uppercase leading-relaxed tracking-tight">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Final Call to Action */}
-      <section className="py-32 bg-white text-center">
-        <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-4xl lg:text-6xl font-black text-slate-900 mb-10 tracking-tighter uppercase leading-tight">Manutenção exige método, registro e análise técnica.</h2>
-          <div className="flex flex-wrap justify-center gap-6">
-            <Link to="/demo" className="bg-blue-700 hover:bg-blue-800 text-white px-12 py-6 rounded-sm font-black text-sm uppercase tracking-[0.3em] transition-all shadow-2xl shadow-blue-200">
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-8 tracking-tight">
+            Pronto para profissionalizar sua gestão?
+          </h2>
+          <p className="text-slate-500 text-lg mb-12 max-w-2xl mx-auto">
+            Junte-se a empresas que deixaram o "apagar incêndios" no passado. Solicite uma demonstração técnica hoje mesmo.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link to="/demo" className="px-10 py-5 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white rounded-lg font-bold text-sm uppercase tracking-wider shadow-lg shadow-blue-500/20 transition-all transform hover:scale-105">
               Solicitar Demonstração
             </Link>
-            <Link to="/platform" className="bg-slate-900 hover:bg-slate-800 text-white px-12 py-6 rounded-sm font-black text-sm uppercase tracking-[0.3em] transition-all">
-              Falar com Especialista
+            <Link to="/platform" className="px-10 py-5 bg-white hover:bg-slate-50 text-slate-700 rounded-lg font-bold text-sm uppercase tracking-wider border border-slate-200 hover:border-blue-300 transition-all shadow-sm">
+              Falar com Consultor
             </Link>
           </div>
         </div>
@@ -243,11 +268,5 @@ const Home: React.FC = () => {
     </div>
   );
 };
-
-const CheckCircle2 = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-  </svg>
-);
 
 export default Home;

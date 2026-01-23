@@ -1,82 +1,124 @@
-
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldCheck, Activity, Settings, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
+
+const SCENES = [
+  {
+    // IMAGEM 1 — CONTEXTO DA PERÍCIA (Ambiente Técnico)
+    image: "/assets/hero/v3/hero-v3-1.png",
+    text: "Contexto técnico: Ambiente de análise e manutenção pesada.",
+    duration: 6000
+  },
+  {
+    // IMAGEM 2 — ANÁLISE DE FALHA (Cilindros Hidráulicos)
+    image: "/assets/hero/v3/hero-v3-2.png",
+    text: "Análise de falha: Identificação de desgastes em cilindros hidráulicos.",
+    duration: 6000
+  },
+  {
+    // IMAGEM 3 — PERITAGEM TÉCNICA (Evidência Física)
+    image: "/assets/hero/hero-1.png",
+    text: "Peritagem técnica: Inspeção visual e coleta de evidências físicas.",
+    duration: 6000
+  },
+  {
+    // IMAGEM 4 — REGISTRO DO PROCESSO (Apoio Digital)
+    image: "/assets/hero/v3/hero-v3-4.png",
+    text: "Registro técnico: Sistema de apoio para laudos e histórico.",
+    duration: 6000
+  },
+  {
+    // IMAGEM 5 — CONTROLE E RASTREABILIDADE (Método)
+    image: "/assets/hero/v3/hero-v3-5.png",
+    text: "Rastreabilidade: Controle absoluto de cada componente analisado.",
+    duration: 6000
+  }
+];
 
 const Hero: React.FC = () => {
+  const [currentScene, setCurrentScene] = useState(0);
+
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+    const animate = () => {
+      timeout = setTimeout(() => {
+        setCurrentScene((prev) => (prev + 1) % SCENES.length);
+      }, SCENES[currentScene].duration);
+    };
+    animate();
+    return () => clearTimeout(timeout);
+  }, [currentScene]);
+
   return (
-    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-white overflow-hidden border-b border-slate-100">
-      <div className="absolute top-0 right-0 -mr-24 -mt-24 w-[700px] h-[700px] bg-blue-50/50 rounded-full blur-[140px] opacity-40"></div>
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-12 gap-16 items-center">
-          <div className="lg:col-span-7 space-y-10">
-            <div className="inline-flex items-center px-4 py-1.5 rounded-sm border border-blue-200 bg-blue-50 text-blue-700 text-[10px] font-black tracking-widest uppercase shadow-sm">
-              <ShieldCheck className="w-4 h-4 mr-2" />
-              Confiabilidade de Ativos & Análise de Falhas
-            </div>
-
-            <h1 className="text-5xl lg:text-7xl font-black text-slate-900 leading-[1.05] tracking-tighter">
-              Engenharia, Tecnologia e Inteligência Aplicadas à <span className="text-blue-700">Manutenção</span>
-            </h1>
-
-            <p className="text-xl text-slate-500 max-w-2xl leading-relaxed font-medium">
-              A Trust Tecnologia é uma empresa de tecnologia especializada em sistemas inteligentes para análise de falhas, confiabilidade de ativos e gestão completa da manutenção industrial.
-            </p>
-
-            <div className="flex flex-wrap gap-5 pt-4">
-              <Link to="/platform" className="bg-blue-700 hover:bg-blue-800 text-white px-8 py-5 rounded-sm font-black text-xs uppercase tracking-[0.2em] transition-all shadow-xl shadow-blue-200 flex items-center">
-                Conheça a Plataforma <ChevronRight className="ml-2 w-4 h-4" />
-              </Link>
-              <Link to="/features" className="bg-white hover:bg-slate-50 text-slate-900 px-8 py-5 rounded-sm font-black text-xs uppercase tracking-[0.2em] transition-all border border-slate-200 shadow-sm">
-                Como Funciona
-              </Link>
-              <Link to="/demo" className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-5 rounded-sm font-black text-xs uppercase tracking-[0.2em] transition-all shadow-lg">
-                Solicitar Demonstração
-              </Link>
-            </div>
+    <section className="relative min-h-screen w-full bg-white overflow-hidden flex flex-col justify-center">
+      {/* Slideshow Background Layer */}
+      {SCENES.map((scene, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 transition-opacity duration-[2000ms] ease-in-out ${index === currentScene ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+        >
+          {/* Image Container with Padding for "Zoom Out" effect */}
+          <div className="w-full h-full p-0 lg:p-12 bg-white">
+            <img
+              src={scene.image}
+              alt="Peritagem e Manutenção Hidráulica"
+              className="w-full h-full object-contain"
+              style={{ transformOrigin: 'center center' }}
+            />
           </div>
 
-          <div className="lg:col-span-5 relative">
-            <div className="relative bg-white border border-slate-200 p-8 rounded-sm shadow-[0_32px_64px_-16px_rgba(0,0,0,0.08)]">
-              <div className="flex items-center justify-between mb-8 pb-6 border-b border-slate-100">
-                <div>
-                  <h3 className="text-sm font-black text-slate-900 uppercase tracking-widest">Dashboard Operacional</h3>
-                  <p className="text-slate-400 text-[10px] font-bold uppercase tracking-widest mt-1 italic">Conceitual — Sem valores reais</p>
-                </div>
-                <div className="bg-slate-50 p-2.5 rounded-sm border border-slate-100">
-                  <Activity className="text-blue-700 w-5 h-5" />
-                </div>
-              </div>
+          {/* Professional Industrial Overlay - Steel/Blue Tone */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/40 to-transparent pointer-events-none"></div>
+        </div>
+      ))}
 
-              <div className="space-y-6">
-                {[
-                  { label: "Disponibilidade Global", width: "w-[92%]", color: "bg-blue-600" },
-                  { label: "Confiabilidade de Ativos", width: "w-[84%]", color: "bg-slate-800" },
-                  { label: "Nível de Criticidade", width: "w-[15%]", color: "bg-blue-400" }
-                ].map((item, i) => (
-                  <div key={i} className="space-y-2">
-                    <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-slate-500">
-                      <span>{item.label}</span>
-                    </div>
-                    <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
-                      <div className={`h-full ${item.width} ${item.color} rounded-full`}></div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+      {/* Spacer for Navbar */}
+      <div className="w-full h-24 relative z-20"></div>
 
-              <div className="mt-10 pt-8 border-t border-slate-100 grid grid-cols-2 gap-6">
-                <div className="flex items-center space-x-3">
-                  <div className="bg-blue-50 p-2 rounded-sm"><Settings className="w-4 h-4 text-blue-700" /></div>
-                  <span className="text-[10px] font-black uppercase tracking-widest text-slate-900 leading-tight">Sistemas Customizáveis</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="bg-slate-50 p-2 rounded-sm"><ShieldCheck className="w-4 h-4 text-slate-800" /></div>
-                  <span className="text-[10px] font-black uppercase tracking-widest text-slate-900 leading-tight">Processos Auditáveis</span>
-                </div>
-              </div>
-            </div>
+      {/* Main Hero Content - Aligned Left */}
+      <div className="relative z-30 max-w-7xl mx-auto px-6 lg:px-8 w-full flex-grow flex items-center">
+        <div className="max-w-3xl">
+          {/* Tagline */}
+          <div className="mb-6 inline-flex items-center px-4 py-1.5 rounded bg-white/80 border border-slate-200 backdrop-blur-md shadow-sm">
+            <div className="w-2 h-2 bg-blue-600 rounded-full mr-2 animate-pulse"></div>
+            <span className="text-slate-600 text-[10px] lg:text-xs font-bold tracking-[0.2em] uppercase">Controle Total do Processo</span>
+          </div>
+
+          {/* Headline */}
+          <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black text-slate-900 tracking-tight leading-[0.95] mb-6 drop-shadow-sm">
+            TRUST <br />
+            <span className="text-slate-400">TECNOLOGIA</span>
+          </h1>
+
+          {/* Subtitle */}
+          <h2 className="text-lg lg:text-2xl text-slate-600 font-normal tracking-wide max-w-2xl border-l-4 border-blue-600 pl-6 mb-10 leading-relaxed">
+            Análise de falhas e peritagem técnica.
+          </h2>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link to="/demo" className="px-8 py-4 bg-blue-700 hover:bg-blue-600 text-white font-bold tracking-widest uppercase text-xs rounded transition-all shadow-lg text-center transform hover:translate-y-[-2px]">
+              Solicitar Diagnóstico
+            </Link>
+            <Link to="/platform" className="px-8 py-4 border border-slate-300 hover:bg-slate-100 text-slate-700 font-bold tracking-widest uppercase text-xs rounded backdrop-blur-sm transition-all flex items-center justify-center group">
+              Conhecer Solução <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer Strip - Reinforcing Pillars */}
+      <div className="relative z-30 w-full border-t border-slate-200 bg-white/90 backdrop-blur-sm py-6">
+        <div className="max-w-7xl mx-auto px-6 flex flex-wrap gap-8 justify-start lg:justify-between text-slate-500 text-xs font-bold tracking-widest uppercase items-center">
+          {/* Current Scene Context Indicator */}
+          <div className="hidden md:flex items-center text-blue-500 w-full md:w-auto mb-4 md:mb-0 border-b border-blue-500/30 pb-1">
+            <span className="mr-2 opacity-50">AGORA:</span> {SCENES[currentScene].text}
+          </div>
+
+          <div className="flex gap-6">
+            <div className="flex items-center"><ChevronRight className="w-3 h-3 text-emerald-500 mr-2" /> Manutenção Mecânica</div>
+            <div className="flex items-center"><ChevronRight className="w-3 h-3 text-emerald-500 mr-2" /> Análise de Falhas</div>
+            <div className="flex items-center"><ChevronRight className="w-3 h-3 text-emerald-500 mr-2" /> Controle de Processo</div>
           </div>
         </div>
       </div>

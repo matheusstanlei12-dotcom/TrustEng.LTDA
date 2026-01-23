@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ClipboardEdit, Search, Cpu, Zap, ClipboardCheck, LayoutGrid, ChevronRight } from 'lucide-react';
+import { ClipboardEdit, Search, Cpu, Zap, ClipboardCheck, LayoutGrid } from 'lucide-react';
 
 const steps = [
   { id: 1, title: "Registro", desc: "Coleta técnica estruturada de evidências da falha.", icon: <ClipboardEdit /> },
@@ -13,12 +13,14 @@ const steps = [
 
 const ProcessFlow: React.FC = () => {
   return (
-    <section className="py-24 bg-slate-50 border-y border-slate-100">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="py-24 bg-white border-t border-slate-200 relative overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[50%] bg-blue-100/50 blur-[100px] pointer-events-none rounded-full"></div>
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
-          <h2 className="text-blue-700 text-[10px] font-black uppercase tracking-[0.4em] mb-4">Metodologia Industrial</h2>
-          <p className="text-3xl font-extrabold text-slate-900 uppercase tracking-tighter">Fluxo de Análise e Confiabilidade</p>
-          <div className="h-1 w-12 bg-blue-700 mx-auto mt-6"></div>
+          <span className="text-blue-600 font-bold tracking-widest text-xs uppercase bg-blue-50 px-3 py-1 rounded-full border border-blue-100">Metodologia Industrial</span>
+          <h2 className="text-3xl font-bold text-slate-900 mt-4 uppercase tracking-tight">Fluxo de Análise e Confiabilidade</h2>
         </div>
 
         <div className="relative">
@@ -26,23 +28,27 @@ const ProcessFlow: React.FC = () => {
           <div className="absolute top-1/2 left-0 w-full h-px bg-slate-200 hidden lg:block -translate-y-1/2"></div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 relative z-10">
-            {steps.map((step, idx) => (
-              <div key={step.id} className="text-center bg-white border border-slate-200 p-8 rounded-sm shadow-sm hover:border-blue-600 transition-all group">
-                <div className="w-16 h-16 bg-slate-50 border border-slate-100 rounded-sm flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-700 group-hover:text-white transition-all shadow-sm">
-                  {/* Added cast to React.ReactElement<any> to allow 'size' prop */}
-                  {React.cloneElement(step.icon as React.ReactElement<any>, { size: 28 })}
+            {steps.map((step) => (
+              <div key={step.id} className="text-center bg-white border border-slate-200 p-6 rounded-xl shadow-lg hover:border-blue-200 hover:shadow-blue-500/5 transition-all group relative">
+                {/* Number Badge */}
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white border border-slate-200 text-blue-600 text-[10px] font-bold px-2 py-0.5 rounded-full z-20 shadow-sm">
+                  PASSO 0{step.id}
                 </div>
-                <div className="text-blue-700 text-[10px] font-black mb-2">PASSO 0{step.id}</div>
-                <h4 className="text-slate-900 font-bold text-sm uppercase tracking-tight mb-3">{step.title}</h4>
-                <p className="text-slate-500 text-[11px] leading-relaxed font-medium">{step.desc}</p>
+
+                <div className="w-14 h-14 bg-slate-50 border border-slate-100 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all shadow-sm text-slate-400">
+                  {React.cloneElement(step.icon as React.ReactElement<any>, { size: 24 })}
+                </div>
+
+                <h4 className="text-slate-900 font-bold text-xs uppercase tracking-wide mb-2">{step.title}</h4>
+                <p className="text-slate-500 text-[10px] leading-relaxed font-medium">{step.desc}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="mt-20 max-w-4xl mx-auto text-center">
-          <p className="text-slate-500 text-sm font-bold uppercase tracking-widest leading-relaxed">
-            A Trust Tecnologia estrutura análises de falhas com metodologias reconhecidas pela engenharia, garantindo identificação clara do problema e eliminação definitiva de recorrências.
+        <div className="mt-16 max-w-4xl mx-auto text-center">
+          <p className="text-slate-500 text-sm font-medium leading-relaxed">
+            A Trust Tecnologia estrutura análises de falhas com metodologias reconhecidas pela engenharia (RCM, FMEA), garantindo identificação clara do problema e eliminação definitiva de recorrências.
           </p>
         </div>
       </div>
